@@ -22,6 +22,7 @@ public class RotaPedidos {
 
 				from("direct:soap").
 						routeId("rota-soap").
+						to("xslt:pedido-para-soap.xslt").
 						log("chamando servico soap ${body}").
 						to("mock:soap");
 
